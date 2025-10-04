@@ -101,7 +101,7 @@ def warning():
     <div class="alert-box">
         <h1 class="glitch" data-text="⚠️ HI BELG GUY ⚠️">⚠️ HI BELG GUY ⚠️</h1>
         <p class="blink">WE KNOW WHO YOU ARE BRO</p>
-        <p class="blink">AND BACK STORY</p>
+        <p class="blink">AND BEWARE OF STEP YOU DO</p>
     </div>
 
     <div class="console" id="console"></div>
@@ -118,7 +118,7 @@ def warning():
         "GOOD LUCK",
         "MOTHER FUCKER",
         ".........",
-        "FUCK YOU BRO",
+        "YOU ARE BEING WATCHED",
     ];
     let i = 0;
     const beep = document.getElementById('beep');
