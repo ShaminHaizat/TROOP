@@ -9,15 +9,17 @@ def warning():
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>⚠️ FUCK YOU BRO  ⚠️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚠️ FUCK YOU BRO ⚠️</title>
 <style>
     body {
         background-color: black;
         color: red;
         font-family: 'Courier New', monospace;
         text-align: center;
-        margin-top: 10%;
-        overflow: hidden;
+        margin: 0;
+        padding: 5%;
+        overflow-x: hidden;
         animation: bgFlash 1.2s infinite alternate;
     }
     @keyframes bgFlash {
@@ -26,10 +28,13 @@ def warning():
     }
     .alert-box {
         border: 2px solid red;
-        padding: 40px;
+        padding: 5vw 5vw;
         display: inline-block;
+        max-width: 90%;
+        box-sizing: border-box;
         animation: flicker 1.5s infinite alternate;
         box-shadow: 0 0 30px red;
+        border-radius: 10px;
     }
     @keyframes flicker {
         0% { opacity: 1; }
@@ -37,22 +42,25 @@ def warning():
         100% { opacity: 1; }
     }
     h1 {
-        font-size: 2.2em;
+        font-size: clamp(1.4em, 5vw, 2.5em);
         text-shadow: 0 0 15px red;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        word-wrap: break-word;
     }
     .blink {
         animation: blink 0.7s infinite alternate;
+        font-size: clamp(0.9em, 3vw, 1.2em);
     }
     @keyframes blink {
         from { opacity: 1; }
         to { opacity: 0.3; }
     }
     .console {
-        width: 70%;
+        width: 90%;
+        max-width: 600px;
         margin: 20px auto;
         text-align: left;
-        font-size: 1em;
+        font-size: clamp(0.8em, 2.5vw, 1em);
         line-height: 1.4em;
         color: #ff5555;
         background: rgba(0,0,0,0.7);
@@ -61,6 +69,7 @@ def warning():
         height: 200px;
         overflow-y: auto;
         box-shadow: 0 0 15px red;
+        border-radius: 10px;
     }
     .glitch {
         position: relative;
@@ -93,6 +102,13 @@ def warning():
         0% { clip: rect(0, 9999px, 0, 0); }
         50% { clip: rect(0, 9999px, 30px, 0); transform: translate(5px, 5px); }
         100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    /* Responsive spacing for smaller screens */
+    @media (max-width: 600px) {
+        body { padding: 8%; }
+        .alert-box { padding: 6vw 4vw; }
+        .console { height: 180px; }
     }
 </style>
 </head>
@@ -145,5 +161,3 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
-
-
