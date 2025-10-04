@@ -103,12 +103,17 @@ def warning():
         50% { clip: rect(0, 9999px, 30px, 0); transform: translate(5px, 5px); }
         100% { clip: rect(0, 9999px, 0, 0); }
     }
-
-    /* Responsive spacing for smaller screens */
     @media (max-width: 600px) {
         body { padding: 8%; }
         .alert-box { padding: 6vw 4vw; }
         .console { height: 180px; }
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px red;
     }
 </style>
 </head>
@@ -118,10 +123,15 @@ def warning():
         <h1 class="glitch" data-text="⚠️ HI BELG GUY ⚠️">⚠️ HI BELG GUY ⚠️</h1>
         <p class="blink">WE KNOW WHO YOU ARE BRO</p>
         <p class="blink">AND BEWARE OF STEP YOU DO</p>
+        <img src="/static/SLAP.webp" alt="Troll Image">
+        <img src="/static/SREK.gif" alt="Funny GIF">
     </div>
 
     <div class="console" id="console"></div>
 
+    <!-- Background sound -->
+    <audio id="music" src="/static/ZZZ-SOUND-EFFECT.mp3" autoplay loop></audio>
+    <!-- Beep effect for console -->
     <audio id="beep" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
 
 <script>
